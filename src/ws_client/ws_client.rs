@@ -37,7 +37,7 @@ impl WsClient {
             match msg {
                 Ok(msg) => {
                     if let Message::Text(text) = msg {
-                        println!("{text}");
+                        // println!("{text}");
                         match self.message_factory.check(&text, receive_time).await {
                             Some(msg) => self.send_msg(msg).await,
                             None => {}
